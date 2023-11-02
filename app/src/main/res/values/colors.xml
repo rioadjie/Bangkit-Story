@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="black_600">#4C4C4C</color>
+    <color name="navy">#2D3D4F</color>
+    <color name="red_bangkit">#FF0000</color>
+    <color name="red_secondary_bangkit">#E60000</color>
+    <color name="black_bangkit">#171717</color>
+    <color name="black_secondary_bangkit">#656565</color>
+    <color name="white">#FFFFFF</color>
+    <color name="light_blue_50">#FFE1F5FE</color>
+    <color name="light_blue_200">#FF81D4FA</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
+</resources>

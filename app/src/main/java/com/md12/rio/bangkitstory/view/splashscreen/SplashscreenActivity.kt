@@ -1,0 +1,49 @@
+package com.md12.rio.bangkitstory.view.splashscreen
+
+import android.annotation.SuppressLint
+import android.content.Intent
+import android.os.Build
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.view.WindowInsets
+import android.view.WindowManager
+import androidx.lifecycle.lifecycleScope
+import com.md12.rio.bangkitstory.R
+import com.md12.rio.bangkitstory.utils.PrefsManager
+import com.md12.rio.bangkitstory.view.main.MainActivity
+import com.md12.rio.bangkitstory.view.welcome.WelcomeActivity
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+
+@SuppressLint("CustomSplashScreen")
+class SplashscreenActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_splashscreen)
+        setView()
+        val prefsManager = PrefsManager(this)
+        lifecycleScope.launch {
+            delay(3000)
+            val intent = if(prefsManager.exampleBoolean) {
+                Intent(this@SplashscreenActivity, MainActivity::class.java)
+            } else {
+                Intent(this@SplashscreenActivity, WelcomeActivity::class.java)
+            }
+            startActivity(intent)
+            finish()
+        }
+    }
+
+    private fun setView() {
+        @Suppress("DEPRECATION")
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            window.insetsController?.hide(WindowInsets.Type.statusBars())
+        } else {
+            window.setFlags(
+                WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN
+            )
+        }
+        supportActionBar?.hide()
+    }
+}
