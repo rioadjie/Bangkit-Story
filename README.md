@@ -1,2 +1,2 @@
-# Bangkit-Story
-Submission 1 BPAAI Cource Bangkit 2023
+# Bangkit Story Submission
+Submission 1 BPAAI Course Bangkit 2023
